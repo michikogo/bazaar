@@ -1,8 +1,8 @@
-const { pgTable, uuid, text, numeric, integer, timestamp, pgEnum } = require("drizzle-orm/pg-core")
+import { pgTable, uuid, text, numeric, integer, timestamp, pgEnum } from "drizzle-orm/pg-core"
 
-const orderStatusEnum = pgEnum("order_status", ["new", "processing", "shipped", "completed"])
+export const orderStatusEnum = pgEnum("order_status", ["new", "processing", "shipped", "completed"])
 
-const stores = pgTable("stores", {
+export const stores = pgTable("stores", {
   id: uuid("id").defaultRandom().primaryKey(),
   clerkUserId: text("clerk_user_id").unique().notNull(),
   name: text("name").notNull(),
@@ -11,7 +11,7 @@ const stores = pgTable("stores", {
   createdAt: timestamp("created_at").defaultNow(),
 })
 
-const products = pgTable("products", {
+export const products = pgTable("products", {
   id: uuid("id").defaultRandom().primaryKey(),
   storeId: uuid("store_id")
     .references(() => stores.id)
@@ -25,7 +25,7 @@ const products = pgTable("products", {
   createdAt: timestamp("created_at").defaultNow(),
 })
 
-const buyers = pgTable("buyers", {
+export const buyers = pgTable("buyers", {
   id: uuid("id").defaultRandom().primaryKey(),
   clerkUserId: text("clerk_user_id").unique(),
   name: text("name").notNull(),
@@ -34,7 +34,7 @@ const buyers = pgTable("buyers", {
   createdAt: timestamp("created_at").defaultNow(),
 })
 
-const orders = pgTable("orders", {
+export const orders = pgTable("orders", {
   id: uuid("id").defaultRandom().primaryKey(),
   buyerId: uuid("buyer_id")
     .references(() => buyers.id)
@@ -44,7 +44,7 @@ const orders = pgTable("orders", {
   createdAt: timestamp("created_at").defaultNow(),
 })
 
-const orderItems = pgTable("order_items", {
+export const orderItems = pgTable("order_items", {
   id: uuid("id").defaultRandom().primaryKey(),
   orderId: uuid("order_id")
     .references(() => orders.id)
@@ -55,5 +55,3 @@ const orderItems = pgTable("order_items", {
   quantity: integer("quantity").notNull(),
   priceAtPurchase: numeric("price_at_purchase", { precision: 10, scale: 2 }).notNull(),
 })
-
-module.exports = { stores, products, buyers, orders, orderItems, orderStatusEnum }
