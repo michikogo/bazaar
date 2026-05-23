@@ -17,7 +17,9 @@ Then compose them in your pages:
 ```tsx
 <Card onClick={() => navigate(`/product/${id}`)}>
   <Flex direction="col" gap="2">
-    <Text size="lg" weight="semibold">{product.name}</Text>
+    <Text size="lg" weight="semibold">
+      {product.name}
+    </Text>
     <Text color="muted">{product.storeName}</Text>
     <Text weight="bold">${product.price}</Text>
   </Flex>
@@ -40,14 +42,14 @@ npm run ladle     # opens at http://localhost:61001
 </Button>
 ```
 
-| Prop | Type | Default | Options |
-|------|------|---------|---------|
-| `variant` | string | `primary` | `primary` `secondary` `ghost` `warning` `destructive` |
-| `size` | string | `md` | `sm` `md` `lg` |
-| `disabled` | boolean | `false` | |
-| `type` | string | `button` | `button` `submit` `reset` |
-| `onClick` | function | — | |
-| `className` | string | — | |
+| Prop        | Type     | Default   | Options                                               |
+| ----------- | -------- | --------- | ----------------------------------------------------- |
+| `variant`   | string   | `primary` | `primary` `secondary` `ghost` `warning` `destructive` |
+| `size`      | string   | `md`      | `sm` `md` `lg`                                        |
+| `disabled`  | boolean  | `false`   |                                                       |
+| `type`      | string   | `button`  | `button` `submit` `reset`                             |
+| `onClick`   | function | —         |                                                       |
+| `className` | string   | —         |                                                       |
 
 ---
 
@@ -59,13 +61,13 @@ npm run ladle     # opens at http://localhost:61001
 </Text>
 ```
 
-| Prop | Type | Default | Options |
-|------|------|---------|---------|
-| `size` | string | `base` | `xs` `sm` `base` `lg` `xl` `2xl` |
-| `weight` | string | `normal` | `normal` `medium` `semibold` `bold` |
-| `color` | string | `default` | `default` `muted` `warning` `destructive` |
-| `as` | string | `p` | `p` `span` `h1` `h2` `h3` `h4` |
-| `className` | string | — | |
+| Prop        | Type   | Default   | Options                                   |
+| ----------- | ------ | --------- | ----------------------------------------- |
+| `size`      | string | `base`    | `xs` `sm` `base` `lg` `xl` `2xl`          |
+| `weight`    | string | `normal`  | `normal` `medium` `semibold` `bold`       |
+| `color`     | string | `default` | `default` `muted` `warning` `destructive` |
+| `as`        | string | `p`       | `p` `span` `h1` `h2` `h3` `h4`            |
+| `className` | string | —         |                                           |
 
 ---
 
@@ -78,14 +80,14 @@ npm run ladle     # opens at http://localhost:61001
 </Flex>
 ```
 
-| Prop | Type | Default | Options |
-|------|------|---------|---------|
-| `direction` | string | `row` | `row` `col` |
-| `gap` | string | `0` | `0` `1` `2` `4` `6` `8` |
-| `align` | string | `start` | `start` `center` `end` `stretch` |
-| `justify` | string | `start` | `start` `center` `end` `between` |
-| `wrap` | boolean | `false` | |
-| `className` | string | — | |
+| Prop        | Type    | Default | Options                          |
+| ----------- | ------- | ------- | -------------------------------- |
+| `direction` | string  | `row`   | `row` `col`                      |
+| `gap`       | string  | `0`     | `0` `1` `2` `4` `6` `8`          |
+| `align`     | string  | `start` | `start` `center` `end` `stretch` |
+| `justify`   | string  | `start` | `start` `center` `end` `between` |
+| `wrap`      | boolean | `false` |                                  |
+| `className` | string  | —       |                                  |
 
 ---
 
@@ -97,10 +99,10 @@ npm run ladle     # opens at http://localhost:61001
 </Card>
 ```
 
-| Prop | Type | Default | Options |
-|------|------|---------|---------|
-| `onClick` | function | — | adds hover shadow when provided |
-| `className` | string | — | |
+| Prop        | Type     | Default | Options                         |
+| ----------- | -------- | ------- | ------------------------------- |
+| `onClick`   | function | —       | adds hover shadow when provided |
+| `className` | string   | —       |                                 |
 
 ---
 
@@ -108,13 +110,13 @@ npm run ladle     # opens at http://localhost:61001
 
 Defined in `src/index.css` under `@theme`. Change the hex values there to retheme the whole app.
 
-| Token | Usage |
-|-------|-------|
-| `primary` / `primary-foreground` | Main actions, links |
-| `secondary` / `secondary-foreground` | Subtle backgrounds, secondary actions |
-| `warning` / `warning-foreground` | Warnings |
-| `destructive` / `destructive-foreground` | Errors, delete actions |
-| `muted` | De-emphasised text |
+| Token                                    | Usage                                 |
+| ---------------------------------------- | ------------------------------------- |
+| `primary` / `primary-foreground`         | Main actions, links                   |
+| `secondary` / `secondary-foreground`     | Subtle backgrounds, secondary actions |
+| `warning` / `warning-foreground`         | Warnings                              |
+| `destructive` / `destructive-foreground` | Errors, delete actions                |
+| `muted`                                  | De-emphasised text                    |
 
 ---
 
