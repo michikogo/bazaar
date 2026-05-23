@@ -33,7 +33,7 @@ describe("ProductDetail", () => {
   })
 
   it("renders product details after loading", async () => {
-    vi.spyOn(global, "fetch").mockResolvedValueOnce({
+    vi.spyOn(globalThis, "fetch").mockResolvedValueOnce({
       ok: true,
       json: async () => mockProduct,
     } as Response)
@@ -54,7 +54,7 @@ describe("ProductDetail", () => {
   })
 
   it("navigates to store page when store name is clicked", async () => {
-    vi.spyOn(global, "fetch").mockResolvedValueOnce({
+    vi.spyOn(globalThis, "fetch").mockResolvedValueOnce({
       ok: true,
       json: async () => mockProduct,
     } as Response)
@@ -68,7 +68,7 @@ describe("ProductDetail", () => {
   })
 
   it("shows out of stock when stock is 0", async () => {
-    vi.spyOn(global, "fetch").mockResolvedValueOnce({
+    vi.spyOn(globalThis, "fetch").mockResolvedValueOnce({
       ok: true,
       json: async () => ({ ...mockProduct, stock: 0 }),
     } as Response)
@@ -80,7 +80,7 @@ describe("ProductDetail", () => {
   })
 
   it("shows error message when product is not found", async () => {
-    vi.spyOn(global, "fetch").mockResolvedValueOnce({
+    vi.spyOn(globalThis, "fetch").mockResolvedValueOnce({
       ok: false,
       status: 404,
     } as Response)
