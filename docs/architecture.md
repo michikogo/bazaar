@@ -21,8 +21,10 @@ In production the client is built to static files and served separately; the Exp
 ```
 /bazaar
   /client                   # React + Vite frontend
+    /.ladle                 # Ladle component browser config + global CSS provider
     /src
-      /components           # Shared domain components (e.g. ProductCard)
+      /components           # Shared domain components
+        ProductCard.tsx
       /ds                   # Design system — generic UI primitives only
         /components         # Button, Card, Flex, Text
       /pages
@@ -33,6 +35,7 @@ In production the client is built to static files and served separately; the Exp
       main.tsx              # React entry point
       types.ts              # Shared TypeScript types
       index.css             # Tailwind v4 import + theme tokens
+      test-setup.ts         # @testing-library/jest-dom setup for Vitest
 
   /server                   # Express + TypeScript API
     /db
@@ -44,6 +47,7 @@ In production the client is built to static files and served separately; the Exp
       stores.ts             # GET /api/stores/:id
     app.ts                  # Express app (no listen — allows test imports)
     index.ts                # Server entry point
+    drizzle.config.ts       # Drizzle Kit config (migrations, studio)
 
   /docs                     # Project documentation
     architecture.md
