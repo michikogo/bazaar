@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Card, Flex, Text } from "../../ds"
-import type { TProductWithStore } from "../../types"
+import { Card, Flex, Text } from "@/ds"
+import type { TProductWithStore } from "@/types"
 
 const Home = () => {
   const [products, setProducts] = useState<TProductWithStore[]>([])
