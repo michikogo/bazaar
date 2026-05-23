@@ -1,5 +1,13 @@
 # Features
 
+## User journeys
+
+**Buyer** — browses products without logging in, adds items to a cart, and checks out as a guest or with a Clerk account. Receives an order confirmation after placing an order.
+
+**Shop owner** — logs in with an admin Clerk role, manages incoming orders on a kanban board (new → processing → shipped → completed), and views a contacts list of all buyers.
+
+---
+
 ## Phase 1 — Marketplace Core (shipped)
 
 ### Homepage — product browsing
