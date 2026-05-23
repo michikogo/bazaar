@@ -5,6 +5,22 @@ import { products, stores } from "../db/schema"
 
 const router = Router()
 
+/**
+ * @openapi
+ * /products:
+ *   get:
+ *     summary: Get all products
+ *     tags: [Products]
+ *     responses:
+ *       200:
+ *         description: List of all products with store name
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/ProductWithStore'
+ */
 router.get("/", async (_req, res) => {
   const rows = await db
     .select({
@@ -24,6 +40,38 @@ router.get("/", async (_req, res) => {
   res.json(rows)
 })
 
+/**
+ * @openapi
+ * /products/{id}:
+ *   get:
+ *     summary: Get a product by ID
+ *     tags: [Products]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *           format: uuid
+ *         description: Product UUID
+ *     responses:
+ *       200:
+ *         description: Product with store name
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ProductWithStore'
+ *       404:
+ *         description: Product not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: Product not found
+ */
 router.get("/:id", async (req, res) => {
   const rows = await db
     .select({
