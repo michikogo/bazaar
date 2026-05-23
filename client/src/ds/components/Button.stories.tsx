@@ -21,8 +21,14 @@ export const Sizes = () => (
 
 export const Disabled = () => (
   <div className="flex gap-4">
-    <Button variant="primary" disabled>Primary</Button>
-    <Button variant="secondary" disabled>Secondary</Button>
-    <Button variant="destructive" disabled>Destructive</Button>
+    <Button variant="primary" disabled>
+      Primary
+    </Button>
+    <Button variant="secondary" disabled>
+      Secondary
+    </Button>
+    <Button variant="destructive" disabled>
+      Destructive
+    </Button>
   </div>
 )
