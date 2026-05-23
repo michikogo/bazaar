@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f4f4f5;
+  --color-secondary-foreground: #18181b;
+
+  --color-warning: #f59e0b;
+  --color-warning-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-muted: #71717a;
+}
+
 * {
   box-sizing: border-box;
 }
