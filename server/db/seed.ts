@@ -1,5 +1,5 @@
-import { db, pool } from "./index.ts"
-import { stores, products } from "./schema.ts"
+import { db, pool } from "./index"
+import { stores, products } from "./schema"
 
 const run = async () => {
   console.log("Seeding database...")
