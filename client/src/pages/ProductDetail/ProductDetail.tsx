@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { Flex, Text, Button } from "../../ds"
 
-type Product = {
+type TProduct = {
   id: string
   name: string
   description: string | null
@@ -17,7 +17,7 @@ type Product = {
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const [product, setProduct] = useState<Product | null>(null)
+  const [product, setProduct] = useState<TProduct | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
