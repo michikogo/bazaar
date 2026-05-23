@@ -13,7 +13,7 @@ type Product = {
   storeId: string
 }
 
-type Store = {
+type TStore = {
   id: string
   name: string
   bio: string | null
@@ -24,7 +24,7 @@ type Store = {
 const Store = () => {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const [store, setStore] = useState<Store | null>(null)
+  const [store, setStore] = useState<TStore | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
