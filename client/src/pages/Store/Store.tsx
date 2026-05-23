@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { Flex, Text, Button, Card } from "@/ds"
+import { Flex, Text, Button } from "@/ds"
 import type { TStore } from "@/types"
+import ProductCard from "@/components/ProductCard"
 
 const Store = () => {
   const { id } = useParams<{ id: string }>()
@@ -66,29 +67,7 @@ const Store = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {store.products.map((product) => (
-            <Card key={product.id} onClick={() => navigate(`/product/${product.id}`)}>
-              <div className="aspect-square bg-secondary">
-                {product.imageUrl ? (
-                  <img
-                    src={product.imageUrl}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <Flex justify="center" align="center" className="h-full">
-                    <Text color="muted" size="sm">
-                      No image
-                    </Text>
-                  </Flex>
-                )}
-              </div>
-              <Flex direction="col" gap="1" className="p-4">
-                <Text weight="semibold">{product.name}</Text>
-                <Text weight="bold" className="mt-1">
-                  ${product.price}
-                </Text>
-              </Flex>
-            </Card>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       )}
