@@ -1,25 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { Flex, Text, Button, Card } from "../../ds"
-
-type Product = {
-  id: string
-  name: string
-  description: string | null
-  price: string
-  imageUrl: string | null
-  category: string | null
-  stock: number | null
-  storeId: string
-}
-
-type TStore = {
-  id: string
-  name: string
-  bio: string | null
-  location: string | null
-  products: Product[]
-}
+import type { TStore } from "../../types"
 
 const Store = () => {
   const { id } = useParams<{ id: string }>()

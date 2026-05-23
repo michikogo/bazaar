@@ -1,21 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Card, Flex, Text } from "../ds"
-
-type TProduct = {
-  id: string
-  name: string
-  description: string | null
-  price: string
-  imageUrl: string | null
-  category: string | null
-  stock: number | null
-  storeId: string
-  storeName: string
-}
+import type { TProductWithStore } from "../types"
 
 const Home = () => {
-  const [products, setProducts] = useState<TProduct[]>([])
+  const [products, setProducts] = useState<TProductWithStore[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const navigate = useNavigate()
