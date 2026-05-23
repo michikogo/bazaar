@@ -26,7 +26,7 @@ const weightMap = {
 }
 
 const colorMap = {
-  default: "text-primary",
+  default: "text-black",
   muted: "text-muted",
   warning: "text-warning",
   destructive: "text-destructive",
