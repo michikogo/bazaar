@@ -62,6 +62,9 @@ The client proxies `/api` requests to `localhost:3001`, so no CORS config needed
 # Component browser (Ladle)
 cd client && npm run ladle
 
+# API docs — http://localhost:3001/api/docs/ (dev only)
+cd server && npm run dev
+
 # Run tests
 cd client && npm test
 cd server && npm test

@@ -48,6 +48,8 @@ In production the client is built to static files and served separately; the Exp
     app.ts                  # Express app (no listen — allows test imports)
     index.ts                # Server entry point
     drizzle.config.ts       # Drizzle Kit config (migrations, studio)
+    swagger.ts              # swagger-jsdoc config, exports swaggerSpec
+    swagger.schemas.ts      # Reusable OpenAPI component schemas
 
   /docs                     # Project documentation
     architecture.md
@@ -85,6 +87,8 @@ The `@` path alias maps to `src/`, so all imports use `@/ds`, `@/types`, etc. in
 | **Neon**                  | Serverless Postgres — no connection management overhead      |
 | **Clerk**                 | Auth (used in Phase 2+)                                      |
 | **tsx**                   | Runs TypeScript directly in development without a build step |
+| **swagger-jsdoc**         | Generates OpenAPI spec from `@openapi` JSDoc blocks in route files |
+| **swagger-ui-express**    | Serves live API docs UI at `/api/docs` (dev only)            |
 
 The Express app is exported from `app.ts` separately from the `listen()` call in `index.ts`. This lets tests import the app without binding a port.
 
