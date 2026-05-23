@@ -1,23 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { Flex, Text, Button } from "../../ds"
-
-type TProduct = {
-  id: string
-  name: string
-  description: string | null
-  price: string
-  imageUrl: string | null
-  category: string | null
-  stock: number | null
-  storeId: string
-  storeName: string
-}
+import type { TProductWithStore } from "../../types"
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const [product, setProduct] = useState<TProduct | null>(null)
+  const [product, setProduct] = useState<TProductWithStore | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
