@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { Card, Flex, Text } from "@/ds"
+import { Flex, Text } from "@/ds"
 import type { TProductWithStore } from "@/types"
+import ProductCard from "@/components/ProductCard"
 
 const Home = () => {
   const [products, setProducts] = useState<TProductWithStore[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("/api/products")
@@ -43,32 +42,7 @@ const Home = () => {
       </Text>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products.map((product) => (
-          <Card key={product.id} onClick={() => navigate(`/product/${product.id}`)}>
-            <div className="aspect-square bg-secondary">
-              {product.imageUrl ? (
-                <img
-                  src={product.imageUrl}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <Flex justify="center" align="center" className="h-full">
-                  <Text color="muted" size="sm">
-                    No image
-                  </Text>
-                </Flex>
-              )}
-            </div>
-            <Flex direction="col" gap="1" className="p-4">
-              <Text weight="semibold">{product.name}</Text>
-              <Text color="muted" size="sm">
-                {product.storeName}
-              </Text>
-              <Text weight="bold" className="mt-1">
-                ${product.price}
-              </Text>
-            </Flex>
-          </Card>
+          <ProductCard key={product.id} product={product} showStoreName />
         ))}
       </div>
     </div>
