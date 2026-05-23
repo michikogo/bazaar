@@ -3,7 +3,7 @@ import React from "react"
 type ButtonProps = {
   children: React.ReactNode
   onClick?: () => void
-  variant?: "primary" | "secondary" | "ghost"
+  variant?: "primary" | "secondary" | "ghost" | "warning" | "destructive"
   size?: "sm" | "md" | "lg"
   disabled?: boolean
   type?: "button" | "submit" | "reset"
@@ -11,9 +11,11 @@ type ButtonProps = {
 }
 
 const variantMap = {
-  primary: "bg-gray-900 text-white hover:bg-gray-700",
-  secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200",
-  ghost: "bg-transparent text-gray-700 hover:bg-gray-100",
+  primary: "bg-primary text-primary-foreground hover:bg-primary/80",
+  secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/70",
+  ghost: "bg-transparent text-primary hover:bg-secondary",
+  warning: "bg-warning text-warning-foreground hover:bg-warning/80",
+  destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/80",
 }
 
 const sizeMap = {

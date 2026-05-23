@@ -23,8 +23,9 @@ export const Weights = () => (
 
 export const Colors = () => (
   <div className="flex flex-col gap-2">
-    <Text color="default">Default color</Text>
-    <Text color="muted">Muted color</Text>
-    <Text color="strong">Strong color</Text>
+    <Text color="default">Default</Text>
+    <Text color="muted">Muted</Text>
+    <Text color="warning">Warning</Text>
+    <Text color="destructive">Destructive</Text>
   </div>
 )

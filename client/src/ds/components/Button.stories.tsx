@@ -6,6 +6,8 @@ export const Variants = () => (
     <Button variant="primary">Primary</Button>
     <Button variant="secondary">Secondary</Button>
     <Button variant="ghost">Ghost</Button>
+    <Button variant="warning">Warning</Button>
+    <Button variant="destructive">Destructive</Button>
   </div>
 )
 
@@ -21,6 +23,6 @@ export const Disabled = () => (
   <div className="flex gap-4">
     <Button variant="primary" disabled>Primary</Button>
     <Button variant="secondary" disabled>Secondary</Button>
-    <Button variant="ghost" disabled>Ghost</Button>
+    <Button variant="destructive" disabled>Destructive</Button>
   </div>
 )

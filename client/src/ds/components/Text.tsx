@@ -4,7 +4,7 @@ type TextProps = {
   children: React.ReactNode
   size?: "xs" | "sm" | "base" | "lg" | "xl" | "2xl"
   weight?: "normal" | "medium" | "semibold" | "bold"
-  color?: "default" | "muted" | "strong"
+  color?: "default" | "muted" | "warning" | "destructive"
   as?: "p" | "span" | "h1" | "h2" | "h3" | "h4"
   className?: string
 }
@@ -26,9 +26,10 @@ const weightMap = {
 }
 
 const colorMap = {
-  default: "text-gray-800",
-  muted: "text-gray-500",
-  strong: "text-gray-950",
+  default: "text-primary",
+  muted: "text-muted",
+  warning: "text-warning",
+  destructive: "text-destructive",
 }
 
 const Text = ({
