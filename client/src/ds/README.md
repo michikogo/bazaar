@@ -1,9 +1,27 @@
 # Design System
 
-Components live in `src/ds/`. Import from the barrel:
+This folder contains the shared UI components used across all buyer-facing pages in Bazaar. Instead of writing raw Tailwind classes directly in pages, we build with these primitives — this keeps the UI consistent and makes it easy to retheme the app by changing token values in one place (`src/index.css`).
+
+The design system includes four components: `Button`, `Text`, `Flex`, and `Card`. Each component accepts props to control its appearance and behaviour — no custom CSS needed.
+
+## How to use
+
+Import any component from the barrel export:
 
 ```ts
 import { Button, Card, Flex, Text } from "./ds"
+```
+
+Then compose them in your pages:
+
+```tsx
+<Card onClick={() => navigate(`/product/${id}`)}>
+  <Flex direction="col" gap="2">
+    <Text size="lg" weight="semibold">{product.name}</Text>
+    <Text color="muted">{product.storeName}</Text>
+    <Text weight="bold">${product.price}</Text>
+  </Flex>
+</Card>
 ```
 
 Run Ladle to browse and interact with all components:
