@@ -13,7 +13,7 @@ type ButtonProps = {
 const variantMap = {
   primary: "bg-primary text-primary-foreground hover:bg-primary/80",
   secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/70",
-  ghost: "bg-transparent text-primary hover:bg-secondary",
+  ghost: "bg-transparent text-black hover:bg-secondary",
   warning: "bg-warning text-warning-foreground hover:bg-warning/80",
   destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/80",
 }
