@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { Flex, Text, Button, Card } from "../../ds"
-import type { TStore } from "../../types"
+import { Flex, Text, Button, Card } from "@/ds"
+import type { TStore } from "@/types"
 
 const Store = () => {
   const { id } = useParams<{ id: string }>()
