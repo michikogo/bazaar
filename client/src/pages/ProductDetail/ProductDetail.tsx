@@ -57,11 +57,7 @@ const ProductDetail = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="aspect-square bg-secondary rounded-xl overflow-hidden">
           {product.imageUrl ? (
-            <img
-              src={product.imageUrl}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
+            <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover" />
           ) : (
             <Flex justify="center" align="center" className="h-full">
               <Text color="muted">No image</Text>
